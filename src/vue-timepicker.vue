@@ -140,7 +140,9 @@ export default {
     renderHoursList () {
       const hoursCount = (this.hourType === 'h' || this.hourType === 'hh') ? 12 : 24
       this.hours = []
-      for (let i = this.hourStart || 0; i < this.hourEnd || hoursCount; i++) {
+      const hourStart = this.hourStart || 0
+      const hourEnd = this.hourEnd || hoursCount
+      for (let i = hourStart; i < hourEnd; i++) {
         this.hours.push(this.formatValue(this.hourType, i))
       }
     },
